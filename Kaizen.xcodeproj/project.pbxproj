@@ -17,6 +17,10 @@
 		A934663C2B76AAA30082A000 /* KaizenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934663B2B76AAA30082A000 /* KaizenUITestsLaunchTests.swift */; };
 		A934664A2B76ABC40082A000 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93466482B76ABC40082A000 /* HomeScreenViewController.swift */; };
 		A934664B2B76ABC40082A000 /* HomeScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93466492B76ABC40082A000 /* HomeScreenViewController.xib */; };
+		A93466502B76AE670082A000 /* GenericAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934664F2B76AE670082A000 /* GenericAPICall.swift */; };
+		A93466532B76AE7E0082A000 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A93466522B76AE7E0082A000 /* Alamofire */; };
+		A93466552B76AEA00082A000 /* SportsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93466542B76AEA00082A000 /* SportsModel.swift */; };
+		A93466572B76B4800082A000 /* SportsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93466562B76B4800082A000 /* SportsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,9 @@
 		A934663B2B76AAA30082A000 /* KaizenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaizenUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A93466482B76ABC40082A000 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		A93466492B76ABC40082A000 /* HomeScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenViewController.xib; sourceTree = "<group>"; };
+		A934664F2B76AE670082A000 /* GenericAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAPICall.swift; sourceTree = "<group>"; };
+		A93466542B76AEA00082A000 /* SportsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsModel.swift; sourceTree = "<group>"; };
+		A93466562B76B4800082A000 /* SportsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93466532B76AE7E0082A000 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +109,11 @@
 		A93466172B76AAA10082A000 /* Kaizen */ = {
 			isa = PBXGroup;
 			children = (
+				A934665B2B76B73B0082A000 /* Views */,
+				A934665A2B76B7270082A000 /* DataFactories */,
+				A93466592B76B71D0082A000 /* ViewModels */,
+				A93466582B76B70D0082A000 /* Managers */,
+				A934664D2B76AE3B0082A000 /* Network */,
 				A934664C2B76ABEC0082A000 /* ViewController */,
 				A93466182B76AAA10082A000 /* AppDelegate.swift */,
 				A934661A2B76AAA10082A000 /* SceneDelegate.swift */,
@@ -138,6 +151,52 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		A934664D2B76AE3B0082A000 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A934664E2B76AE480082A000 /* Models */,
+				A934664F2B76AE670082A000 /* GenericAPICall.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A934664E2B76AE480082A000 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A93466542B76AEA00082A000 /* SportsModel.swift */,
+				A93466562B76B4800082A000 /* SportsList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A93466582B76B70D0082A000 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A93466592B76B71D0082A000 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A934665A2B76B7270082A000 /* DataFactories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataFactories;
+			sourceTree = "<group>";
+		};
+		A934665B2B76B73B0082A000 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,6 +213,9 @@
 			dependencies = (
 			);
 			name = Kaizen;
+			packageProductDependencies = (
+				A93466522B76AE7E0082A000 /* Alamofire */,
+			);
 			productName = Kaizen;
 			productReference = A93466152B76AAA10082A000 /* Kaizen.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +288,9 @@
 				Base,
 			);
 			mainGroup = A934660C2B76AAA10082A000;
+			packageReferences = (
+				A93466512B76AE7E0082A000 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A93466162B76AAA10082A000 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,8 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93466552B76AEA00082A000 /* SportsModel.swift in Sources */,
 				A934664A2B76ABC40082A000 /* HomeScreenViewController.swift in Sources */,
+				A93466572B76B4800082A000 /* SportsList.swift in Sources */,
 				A93466192B76AAA10082A000 /* AppDelegate.swift in Sources */,
+				A93466502B76AE670082A000 /* GenericAPICall.swift in Sources */,
 				A934661B2B76AAA10082A000 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +693,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A93466512B76AE7E0082A000 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A93466522B76AE7E0082A000 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A93466512B76AE7E0082A000 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A934660D2B76AAA10082A000 /* Project object */;
 }
