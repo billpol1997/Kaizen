@@ -12,9 +12,9 @@ struct EventView: View {
     @ObservedObject var viewModel: EventViewModel
     @State var isFavorite: Bool = false
     let countdown = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    var action: () -> ()
+    var action: ((String, Bool)) -> ()
     
-    init(viewModel: EventViewModel, action: @escaping () -> ()) {
+    init(viewModel: EventViewModel, action: @escaping ((String, Bool)) -> ()) {
         self.viewModel = viewModel
         self.action = action
     }
@@ -47,8 +47,9 @@ struct EventView: View {
             Text(String(format: "%d:%d:%d", viewModel.hours, viewModel.minutes, viewModel.seconds))
                 .foregroundColor(.white.opacity(0.8))
                 .font(.footnote)
+                .fontWeight(.semibold)
         }
-        .padding(2)
+        .padding(4)
         .border(.white.opacity(0.9))
         .cornerRadius(2)
     }
@@ -56,8 +57,7 @@ struct EventView: View {
     var favorite: some View {
         Button {
             isFavorite.toggle()
-            self.viewModel.setFavorite(isFavorite: isFavorite)
-            action()
+            action((viewModel.event.id ?? "", isFavorite))
         } label: {
             Image(isFavorite ? "star_full" : "star")
                 .resizable()
@@ -72,9 +72,9 @@ struct EventView: View {
     var match: some View {
         VStack {
             Text(viewModel.event.name ?? "")
-                .foregroundColor(.white.opacity(0.8))
+                .foregroundColor(.white.opacity(0.9))
                 .font(.footnote)
-                .fontWeight(.semibold)
+                .fontWeight(.bold)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
         }

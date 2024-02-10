@@ -41,8 +41,22 @@ final class SportViewModel: ObservableObject {
         }
     }
     
-    func handleFavorites() {
-        let array = self.events.sorted(by: {$0.isFavorite == true && $1.isFavorite == false})
+    func handleFavorites(id: String, isFavorite: Bool) {
+        var array = events
+        let index = events.firstIndex { event in
+            event.id == id
+        } ?? 0
+        
+        array.remove(at: index)
+        
+        if isFavorite { // this is not efficient logic at all , but i couldn't find a way to make this viewModel receive isFavorite changes form EventsViewModel correctly
+            array.insert(events[index], at: 0)
+        } else {
+            let originalPosition = sport.events?.firstIndex(where: { event in
+                event.id == id
+            }) ?? 0
+            array.insert(events[index], at: originalPosition)
+        }
         self.events = array
     }
 }

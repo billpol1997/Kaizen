@@ -60,8 +60,8 @@ struct SportSectionView: View {
         ScrollView(.horizontal) {
             HStack(spacing: 16) {
                 ForEach(self.viewModel.events, id: \.id) { event in
-                    EventView(viewModel: EventViewModel(event: event)) {
-                        self.viewModel.handleFavorites()
+                    EventView(viewModel: EventViewModel(event: event)) { id, isFavorite in 
+                        self.viewModel.handleFavorites(id: id, isFavorite: isFavorite)
                     }
                 }
                 .padding(.leading, 8)

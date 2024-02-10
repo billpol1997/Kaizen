@@ -26,8 +26,4 @@ final class EventViewModel: ObservableObject {
         self.seconds = time.2
     }
     
-    func setFavorite(isFavorite: Bool) {
-        event.isFavorite = isFavorite
-    }
-    
 }
