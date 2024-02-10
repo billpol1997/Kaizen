@@ -13,21 +13,67 @@ class HomeScreenTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNav()
         setupTableViewUI()
         loadData()
     }
     
+    //MARK: load data
     private func loadData() {
         Task { [weak self] in
             guard let self else { return }
             do {
-               await viewModel.fetchSportList()
-               configureTableView()
-               tableView.reloadData()
+                await viewModel.fetchSportList()
+                configureTableView()
+                tableView.reloadData()
             }
         }
     }
     
+    //MARK: Navigation bar
+    private func setupNav() {
+        let logo = UIImage(named: "logo")
+        let logoView = UIImageView(image: logo)
+        logoView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = logoView
+        setupNavButtons()
+    }
+    
+    private func setupNavButtons() {
+        
+        let settingsButton = UIButton(type: .custom)
+        settingsButton.setImage(UIImage(named: "settings")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        settingsButton.contentMode = .scaleAspectFit
+        settingsButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        settingsButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        settingsButton.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
+        let settingsBarButton = UIBarButtonItem(customView: settingsButton)
+        
+        
+        let profileButton = UIButton(type: .custom)
+        profileButton.setImage(UIImage(named: "user")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        profileButton.contentMode = .scaleAspectFit
+        profileButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        profileButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
+        let profileBarButton = UIBarButtonItem(customView: profileButton)
+        
+        
+        navigationItem.setRightBarButton(settingsBarButton, animated: false)
+        navigationItem.setLeftBarButton(profileBarButton, animated: false)
+    }
+    
+    @objc private func settingsButtonTapped() {
+        // Handle settings button tap
+        print("Settings button tapped")
+    }
+    
+    @objc private func profileButtonTapped() {
+        // Handle profile button tap
+        print("Profile button tapped")
+    }
+    
+    //MARK: Table view
     private func setupTableViewUI() {
         tableView.backgroundColor = UIColor.clear
         tableView.estimatedRowHeight = 200
@@ -39,16 +85,12 @@ class HomeScreenTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
     }
-
-    
-    // MARK: - Table view data source
     
     private func configureTableView() {
         tableView.register(HostingTableViewCell<SportSectionView>.self, forCellReuseIdentifier: "SportSection")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     

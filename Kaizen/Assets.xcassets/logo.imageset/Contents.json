@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "stoiximan-1200x532.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

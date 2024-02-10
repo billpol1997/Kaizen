@@ -43,7 +43,7 @@ struct SportSectionView: View {
             expandButton
         }
         .padding(8)
-        .background(Color.orange)
+        .background(Color.red)
     }
     
     var expandButton: some View {
