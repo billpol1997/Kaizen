@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A92A5E152B78002B0089CAD9 /* Vasilis Polyzos CV.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A92A5E142B78002B0089CAD9 /* Vasilis Polyzos CV.pdf */; };
 		A93466192B76AAA10082A000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93466182B76AAA10082A000 /* AppDelegate.swift */; };
 		A934661B2B76AAA10082A000 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934661A2B76AAA10082A000 /* SceneDelegate.swift */; };
 		A93466202B76AAA10082A000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A934661E2B76AAA10082A000 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A92A5E142B78002B0089CAD9 /* Vasilis Polyzos CV.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Vasilis Polyzos CV.pdf"; sourceTree = "<group>"; };
 		A93466152B76AAA10082A000 /* Kaizen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaizen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93466182B76AAA10082A000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A934661A2B76AAA10082A000 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		A93466172B76AAA10082A000 /* Kaizen */ = {
 			isa = PBXGroup;
 			children = (
+				A92A5E142B78002B0089CAD9 /* Vasilis Polyzos CV.pdf */,
 				A934665B2B76B73B0082A000 /* Views */,
 				A934665A2B76B7270082A000 /* DataFactories */,
 				A93466592B76B71D0082A000 /* ViewModels */,
@@ -339,6 +342,7 @@
 			files = (
 				A93466252B76AAA20082A000 /* LaunchScreen.storyboard in Resources */,
 				A934664B2B76ABC40082A000 /* HomeScreenViewController.xib in Resources */,
+				A92A5E152B78002B0089CAD9 /* Vasilis Polyzos CV.pdf in Resources */,
 				A93466222B76AAA20082A000 /* Assets.xcassets in Resources */,
 				A93466202B76AAA10082A000 /* Main.storyboard in Resources */,
 				A9E5B5182B77A5140075BA83 /* HomeScreenTableViewController.xib in Resources */,

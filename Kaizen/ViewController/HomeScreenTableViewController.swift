@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PDFKit
 
 class HomeScreenTableViewController: UITableViewController {
     
@@ -64,13 +65,18 @@ class HomeScreenTableViewController: UITableViewController {
     }
     
     @objc private func settingsButtonTapped() {
-        // Handle settings button tap
         print("Settings button tapped")
     }
     
     @objc private func profileButtonTapped() {
-        // Handle profile button tap
-        print("Profile button tapped")
+        if let pdfURL = Bundle.main.url(forResource: "Vasilis Polyzos CV", withExtension: "pdf") {
+            let documentController = UIDocumentInteractionController(url: pdfURL)
+            documentController.delegate = self
+            documentController.presentPreview(animated: true)
+        } else {
+            // PDF file not found
+            print("PDF file not found.")
+        }
     }
     
     //MARK: Table view
@@ -104,5 +110,11 @@ class HomeScreenTableViewController: UITableViewController {
         guard let cellData = viewModel.list?.list?[indexPath.row] else { return cell}
         cell.set(rootView: SportSectionView(viewModel: SportViewModel(sport: cellData)), parentController: self)
         return cell
+    }
+}
+
+extension HomeScreenTableViewController: UIDocumentInteractionControllerDelegate {
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        return self
     }
 }
