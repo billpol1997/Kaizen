@@ -14,7 +14,7 @@ class HostingTableViewCell<Content: View>: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        controller.view.backgroundColor = .clear
+        controller.view.backgroundColor = .black
     }
     
     required init?(coder aDecoder: NSCoder) {

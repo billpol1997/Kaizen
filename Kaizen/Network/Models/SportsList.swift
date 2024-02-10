@@ -22,7 +22,7 @@ struct SportsList {
 struct Sport {
     let id: String?
     let name: String?
-    let events: [Event]?
+    var events: [Event]?
     
     init(sport: SportsModel?) {
         self.id = sport?.i
@@ -39,7 +39,8 @@ struct Event {
     let id: String?
     let name: String?
     let sportId: String?
-    let startTime: Int?
+    var startTime: Int?
+    var isFavorite: Bool = false
     var dataFactory = DataFactory.shared
     
     init(event: EventsModel?) {

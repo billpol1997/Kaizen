@@ -17,7 +17,7 @@ struct SportSectionView: View {
     
     var body: some View {
         content
-            .background(.black.opacity(0.5))
+            .background(.black.opacity(0.9))
     }
     
     @ViewBuilder
@@ -37,13 +37,13 @@ struct SportSectionView: View {
                 .frame(width: 15, height: 15)
             Text(self.viewModel.sport.name?.capitalized ?? "")
                 .foregroundColor(.white)
-                .font(.footnote)
+                .font(.subheadline)
                 .fontWeight(.bold)
             Spacer()
             expandButton
         }
-        .padding(.horizontal, 8)
-        .background(Color.red)
+        .padding(8)
+        .background(Color.orange)
     }
     
     var expandButton: some View {
@@ -58,10 +58,15 @@ struct SportSectionView: View {
     
     var events: some View {
         ScrollView(.horizontal) {
-            HStack {
-                ForEach(viewModel.sport.events ?? [], id: \.id) { event in
-                    EventView(viewModel: EventViewModel(event: event))
+            HStack(spacing: 16) {
+                ForEach(self.viewModel.events, id: \.id) { event in
+                    EventView(viewModel: EventViewModel(event: event)) {
+                        self.viewModel.handleFavorites()
+                    }
                 }
+                .padding(.leading, 8)
+                .padding(.top, 16)
+                .padding(.bottom, 32)
             }
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum SportsEnum: String {
     case soccer = "SOCCER"
@@ -17,12 +18,14 @@ enum SportsEnum: String {
 final class SportViewModel: ObservableObject {
     
     @Published var sport: Sport
+    @Published var events: [Event]
     private var type: SportsEnum
     private var dataFactory = DataFactory.shared
     
     init(sport: Sport) {
         self.sport = sport
         self.type = SportsEnum(rawValue: sport.name ?? "") ?? .none
+        self.events = sport.events ?? []
     }
     
     func setupSportImage() -> String {
@@ -36,6 +39,11 @@ final class SportViewModel: ObservableObject {
         case .none:
             return "generic"
         }
+    }
+    
+    func handleFavorites() {
+        let array = self.events.sorted(by: {$0.isFavorite == true && $1.isFavorite == false})
+        self.events = array
     }
 }
 

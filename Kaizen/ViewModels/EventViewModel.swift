@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class EventViewModel: ObservableObject {
-    var event: Event
-    var dataFactory = DataFactory.shared
-    var hours: Int = 0
-    var minutes: Int = 0
-    var seconds: Int = 0
+    @Published var event: Event
+    @Published var dataFactory = DataFactory.shared
+    @Published var hours: Int = 0
+    @Published var minutes: Int = 0
+    @Published var seconds: Int = 0
     
     init(event: Event) {
         self.event = event
@@ -23,6 +24,10 @@ final class EventViewModel: ObservableObject {
         self.hours = time.0
         self.minutes = time.1
         self.seconds = time.2
+    }
+    
+    func setFavorite(isFavorite: Bool) {
+        event.isFavorite = isFavorite
     }
     
 }

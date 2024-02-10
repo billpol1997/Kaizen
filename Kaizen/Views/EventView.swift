@@ -6,18 +6,32 @@
 //
 
 import SwiftUI
+import Combine
 
 struct EventView: View {
     @ObservedObject var viewModel: EventViewModel
     @State var isFavorite: Bool = false
+    let countdown = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    var action: () -> ()
     
-    init(viewModel: EventViewModel) {
+    init(viewModel: EventViewModel, action: @escaping () -> ()) {
         self.viewModel = viewModel
+        self.action = action
     }
     
     var body: some View {
        content
             .background(.clear)
+            .onAppear {
+                self.isFavorite = self.viewModel.event.isFavorite
+                self.viewModel.displayTime()
+            }
+            .onReceive(countdown) { _ in
+                if self.viewModel.event.startTime ?? 0 > 0 {
+                    self.viewModel.event.startTime =  (self.viewModel.event.startTime ?? 0) - 1
+                    self.viewModel.displayTime()
+                }
+            }
     }
     
     var content: some View {
@@ -34,13 +48,16 @@ struct EventView: View {
                 .foregroundColor(.white.opacity(0.8))
                 .font(.footnote)
         }
+        .padding(2)
         .border(.white.opacity(0.9))
-        .cornerRadius(4)
+        .cornerRadius(2)
     }
     
     var favorite: some View {
         Button {
             isFavorite.toggle()
+            self.viewModel.setFavorite(isFavorite: isFavorite)
+            action()
         } label: {
             Image(isFavorite ? "star_full" : "star")
                 .resizable()
@@ -55,6 +72,9 @@ struct EventView: View {
     var match: some View {
         VStack {
             Text(viewModel.event.name ?? "")
+                .foregroundColor(.white.opacity(0.8))
+                .font(.footnote)
+                .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
         }
