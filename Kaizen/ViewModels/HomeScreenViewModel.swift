@@ -6,3 +6,20 @@
 //
 
 import Foundation
+import Combine
+
+final class HomeScreenViewModel {
+    private var manager = NetworkManager()
+    private var dataFactory = DataFactory()
+    private (set) var list: SportsList?
+    
+    func fetchSportList() async {
+        do {
+            let data = try await manager.fetchData()
+            self.list = dataFactory.transformData(with: data)
+        }
+        catch {
+            print("Error fetching movie list: \(error)")
+        }
+    }
+}
