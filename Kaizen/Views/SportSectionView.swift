@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct SportSectionView: View {
+    @ObservedObject var viewModel: SportViewModel
+    @State var isCollapsed: Bool = false
+    
+    init(viewModel: SportViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       content
     }
     
     var content: some View {
@@ -21,10 +28,10 @@ struct SportSectionView: View {
     
     var header: some View {
         HStack(spacing: 2) {
-            Image("")
+            Image(self.viewModel.setupSportImage())
                 .resizable()
                 .frame(width: 15, height: 15)
-            Text("")
+            Text(self.viewModel.sport.name?.capitalized ?? "")
                 .foregroundColor(.white)
                 .font(.footnote)
                 .fontWeight(.bold)
@@ -36,9 +43,10 @@ struct SportSectionView: View {
     
     var expandButton: some View {
         Button {
-            
+            isCollapsed.toggle()
+            //TODO: more
         } label: {
-            Image("")
+            Image(isCollapsed ? "down-arrow" : "arrow-up")
                 .resizable()
                 .frame(width: 15, height: 15)
         }
@@ -49,8 +57,4 @@ struct SportSectionView: View {
             //TODO: events
         }
     }
-}
-
-#Preview {
-    SportSectionView()
 }

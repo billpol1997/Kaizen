@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 final class HomeScreenViewModel {
-    private var manager = NetworkManager()
-    private var dataFactory = DataFactory()
+    private var manager = NetworkManager.shared
+    private var dataFactory = DataFactory.shared
     private (set) var list: SportsList?
     
     func fetchSportList() async {

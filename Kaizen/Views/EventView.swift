@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct EventView: View {
+    @ObservedObject var viewModel: EventViewModel
+    @State var isFavorite: Bool = false
+    
+    init(viewModel: EventViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       content
     }
     
     var content: some View {
-        VStack {
+        VStack(alignment: .center) {
             timer
             favorite
             match
@@ -22,7 +29,7 @@ struct EventView: View {
     
     var timer: some View {
         HStack {
-            Text("")
+            Text(" ")
                 .foregroundColor(.gray)
                 .font(.footnote)
         }
@@ -31,20 +38,20 @@ struct EventView: View {
     }
     
     var favorite: some View {
-        Image("")
-            .resizable()
-            .frame(width: 15, height: 15)
+        Button {
+            isFavorite.toggle()
+        } label: {
+            Image(isFavorite ? "star_full" : "star")
+                .resizable()
+                .frame(width: 15, height: 15)
+        }
     }
     
     var match: some View {
         VStack {
-            Text("")
+            Text(viewModel.event.name ?? "")
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
         }
     }
-}
-
-#Preview {
-    EventView()
 }

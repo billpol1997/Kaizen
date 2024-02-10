@@ -26,6 +26,8 @@
 		A9E5B5082B7784950075BA83 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B5072B7784950075BA83 /* HomeScreenViewModel.swift */; };
 		A9E5B50A2B7784CF0075BA83 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B5092B7784CF0075BA83 /* NetworkManager.swift */; };
 		A9E5B50C2B7786160075BA83 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B50B2B7786160075BA83 /* DataFactory.swift */; };
+		A9E5B50E2B778D3A0075BA83 /* SportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B50D2B778D3A0075BA83 /* SportViewModel.swift */; };
+		A9E5B5102B779BEF0075BA83 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B50F2B779BEF0075BA83 /* EventViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		A9E5B5072B7784950075BA83 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		A9E5B5092B7784CF0075BA83 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A9E5B50B2B7786160075BA83 /* DataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
+		A9E5B50D2B778D3A0075BA83 /* SportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportViewModel.swift; sourceTree = "<group>"; };
+		A9E5B50F2B779BEF0075BA83 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				A9E5B5072B7784950075BA83 /* HomeScreenViewModel.swift */,
+				A9E5B50D2B778D3A0075BA83 /* SportViewModel.swift */,
+				A9E5B50F2B779BEF0075BA83 /* EventViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -353,12 +359,14 @@
 				A93466552B76AEA00082A000 /* SportsModel.swift in Sources */,
 				A9E5B5082B7784950075BA83 /* HomeScreenViewModel.swift in Sources */,
 				A9E5B50A2B7784CF0075BA83 /* NetworkManager.swift in Sources */,
+				A9E5B50E2B778D3A0075BA83 /* SportViewModel.swift in Sources */,
 				A9E5B5062B7782C60075BA83 /* SportSectionView.swift in Sources */,
 				A9E5B5042B777E660075BA83 /* EventView.swift in Sources */,
 				A934664A2B76ABC40082A000 /* HomeScreenViewController.swift in Sources */,
 				A93466572B76B4800082A000 /* SportsList.swift in Sources */,
 				A93466192B76AAA10082A000 /* AppDelegate.swift in Sources */,
 				A93466502B76AE670082A000 /* GenericAPICall.swift in Sources */,
+				A9E5B5102B779BEF0075BA83 /* EventViewModel.swift in Sources */,
 				A9E5B50C2B7786160075BA83 /* DataFactory.swift in Sources */,
 				A934661B2B76AAA10082A000 /* SceneDelegate.swift in Sources */,
 			);

@@ -40,10 +40,11 @@ struct Event {
     let name: String?
     let sportId: String?
     let startTime: Int?
+    var dataFactory = DataFactory.shared
     
     init(event: EventsModel?) {
         self.id = event?.i
-        self.name = event?.d
+        self.name = dataFactory.transformMatchTitle(with: event?.d ?? "")
         self.sportId = event?.si
         self.startTime = event?.tt
     }
