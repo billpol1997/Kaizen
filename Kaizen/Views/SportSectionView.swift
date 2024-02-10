@@ -16,13 +16,17 @@ struct SportSectionView: View {
     }
     
     var body: some View {
-       content
+        content
+            .background(.black.opacity(0.5))
     }
     
+    @ViewBuilder
     var content: some View {
         VStack {
             header
-            events
+            if !isCollapsed {
+                events
+            }
         }
     }
     
@@ -39,12 +43,12 @@ struct SportSectionView: View {
             expandButton
         }
         .padding(.horizontal, 8)
+        .background(Color.red)
     }
     
     var expandButton: some View {
         Button {
             isCollapsed.toggle()
-            //TODO: more
         } label: {
             Image(isCollapsed ? "down-arrow" : "arrow-up")
                 .resizable()
@@ -54,7 +58,21 @@ struct SportSectionView: View {
     
     var events: some View {
         ScrollView(.horizontal) {
-            //TODO: events
+            HStack {
+                ForEach(viewModel.sport.events ?? [], id: \.id) { event in
+                    EventView(viewModel: EventViewModel(event: event))
+                }
+            }
+        }
+    }
+}
+
+extension View {
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
         }
     }
 }

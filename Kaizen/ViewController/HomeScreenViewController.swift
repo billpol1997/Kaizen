@@ -34,8 +34,16 @@ class HomeScreenViewController: UIViewController {
     }
     
     private func configureTableView() {
-//        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "MovieCell")
+        tableView.register(HostingTableViewCell<SportSectionView>.self, forCellReuseIdentifier: "SportSection")
     }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "SportSection") as! HostingTableViewCell<SportSectionView>
+//        cell.host(SportSectionView(viewModel: <#T##SportViewModel#>), parent: self)
+//        return cell
+//    }
+    
+    
     
     private func loadData() {
         Task { [weak self] in

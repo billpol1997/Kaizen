@@ -28,6 +28,9 @@
 		A9E5B50C2B7786160075BA83 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B50B2B7786160075BA83 /* DataFactory.swift */; };
 		A9E5B50E2B778D3A0075BA83 /* SportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B50D2B778D3A0075BA83 /* SportViewModel.swift */; };
 		A9E5B5102B779BEF0075BA83 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B50F2B779BEF0075BA83 /* EventViewModel.swift */; };
+		A9E5B5122B779F230075BA83 /* HostingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B5112B779F230075BA83 /* HostingTableViewCell.swift */; };
+		A9E5B5172B77A5140075BA83 /* HomeScreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5B5152B77A5140075BA83 /* HomeScreenTableViewController.swift */; };
+		A9E5B5182B77A5140075BA83 /* HomeScreenTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E5B5162B77A5140075BA83 /* HomeScreenTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		A9E5B50B2B7786160075BA83 /* DataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
 		A9E5B50D2B778D3A0075BA83 /* SportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportViewModel.swift; sourceTree = "<group>"; };
 		A9E5B50F2B779BEF0075BA83 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		A9E5B5112B779F230075BA83 /* HostingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingTableViewCell.swift; sourceTree = "<group>"; };
+		A9E5B5152B77A5140075BA83 /* HomeScreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTableViewController.swift; sourceTree = "<group>"; };
+		A9E5B5162B77A5140075BA83 /* HomeScreenTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,8 @@
 			children = (
 				A93466482B76ABC40082A000 /* HomeScreenViewController.swift */,
 				A93466492B76ABC40082A000 /* HomeScreenViewController.xib */,
+				A9E5B5152B77A5140075BA83 /* HomeScreenTableViewController.swift */,
+				A9E5B5162B77A5140075BA83 /* HomeScreenTableViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 			children = (
 				A9E5B5032B777E660075BA83 /* EventView.swift */,
 				A9E5B5052B7782C60075BA83 /* SportSectionView.swift */,
+				A9E5B5112B779F230075BA83 /* HostingTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +341,7 @@
 				A934664B2B76ABC40082A000 /* HomeScreenViewController.xib in Resources */,
 				A93466222B76AAA20082A000 /* Assets.xcassets in Resources */,
 				A93466202B76AAA10082A000 /* Main.storyboard in Resources */,
+				A9E5B5182B77A5140075BA83 /* HomeScreenTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +370,7 @@
 				A9E5B5082B7784950075BA83 /* HomeScreenViewModel.swift in Sources */,
 				A9E5B50A2B7784CF0075BA83 /* NetworkManager.swift in Sources */,
 				A9E5B50E2B778D3A0075BA83 /* SportViewModel.swift in Sources */,
+				A9E5B5122B779F230075BA83 /* HostingTableViewCell.swift in Sources */,
 				A9E5B5062B7782C60075BA83 /* SportSectionView.swift in Sources */,
 				A9E5B5042B777E660075BA83 /* EventView.swift in Sources */,
 				A934664A2B76ABC40082A000 /* HomeScreenViewController.swift in Sources */,
@@ -367,6 +378,7 @@
 				A93466192B76AAA10082A000 /* AppDelegate.swift in Sources */,
 				A93466502B76AE670082A000 /* GenericAPICall.swift in Sources */,
 				A9E5B5102B779BEF0075BA83 /* EventViewModel.swift in Sources */,
+				A9E5B5172B77A5140075BA83 /* HomeScreenTableViewController.swift in Sources */,
 				A9E5B50C2B7786160075BA83 /* DataFactory.swift in Sources */,
 				A934661B2B76AAA10082A000 /* SceneDelegate.swift in Sources */,
 			);

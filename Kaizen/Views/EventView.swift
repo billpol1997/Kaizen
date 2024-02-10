@@ -17,6 +17,7 @@ struct EventView: View {
     
     var body: some View {
        content
+            .background(.clear)
     }
     
     var content: some View {
@@ -29,11 +30,11 @@ struct EventView: View {
     
     var timer: some View {
         HStack {
-            Text(" ")
-                .foregroundColor(.gray)
+            Text(String(format: "%d:%d:%d", viewModel.hours, viewModel.minutes, viewModel.seconds))
+                .foregroundColor(.white.opacity(0.8))
                 .font(.footnote)
         }
-        .border(.gray)
+        .border(.white.opacity(0.9))
         .cornerRadius(4)
     }
     
@@ -44,6 +45,10 @@ struct EventView: View {
             Image(isFavorite ? "star_full" : "star")
                 .resizable()
                 .frame(width: 15, height: 15)
+                .if(!isFavorite, transform: { image in
+                    image
+                        .foregroundColor(.white.opacity(0.8))
+                })
         }
     }
     
